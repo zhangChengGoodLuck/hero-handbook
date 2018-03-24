@@ -17,7 +17,7 @@
     position: relative
     header:44px
     text-align: center
-    color:$color-dialog-background
+    color:$color-background
     font-size:0
     .icon
       display:inline-block

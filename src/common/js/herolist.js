@@ -6,13 +6,28 @@ class TopHerolist {
   }
 }
 
-let res = []
-
 export function CreateTopHeroList (heroList) {
-  res.push(new TopHerolist({
-    imgid: heroList.ename,
-    name: heroList.cname,
-    title: heroList.title
-  }))
+  let res = []
+  console.log(heroList)
+  heroList.forEach((item) => {
+    if (item.pay_type === 10) {
+      res.push(new TopHerolist({
+        imgid: item.ename,
+        name: item.cname,
+        title: item.title
+      }))
+    }
+  })
   return res
+}
+
+export function initHeroTypeList (heroList, typeid) {
+  let tankList = []
+  heroList.forEach((item, index) => {
+    if (heroList[index].hero_type === typeid) {
+      tankList.push(heroList[index])
+    }
+  })
+  console.log(tankList)
+  return tankList
 }
